@@ -47,8 +47,13 @@ app.get("/shoes", (req,res) => {
         { name: "Jet Boots", price: 1000, type: "boot" },
         { name: "Fifty-Inch Heels", price: 175, type: "heel" }
     ];
-  
+    if (typeof Number(req.query.minPrice) === "number"){
+        for (let i=0; i < shoes.length; i++){
+            res.send(shoes[i]);
+        }
+    }
 })
+
 
 
 
